@@ -1,0 +1,5 @@
+vendor
+.idea
+develop.wp-cli.yml
+staging.wp-cli.yml
+production.wp-cli.yml

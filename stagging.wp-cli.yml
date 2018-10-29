@@ -1,0 +1,13 @@
+url: 'http://stagging.example.netkata.io'
+disabled_commands:
+    - 'db drop'
+'core config':
+    dbname: example_stagging
+    dbprefix: wp_
+    extra-php: |
+        define('WP_POST_REVISIONS', 50);
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_DEBUG', false);     
+        
+apache_modules:
+    - mod_rewrite

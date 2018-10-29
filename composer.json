@@ -1,0 +1,14 @@
+{
+  "name": "vladislav-netkata/wp-cli-salty",
+  "description": "Manage salts for WordPress",
+  "type": "wp-cli-package",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.6",
+    "wp-cli/wp-cli": ">=0.23.0",
+    "symfony/yaml": "^3.4"
+  },
+  "autoload": {
+    "files": [ "salty-command.php" ]
+  }
+}
