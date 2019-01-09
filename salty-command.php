@@ -25,14 +25,17 @@ class Salty_Command extends WP_CLI_Command
 		if (isset($assoc_args['file'])){
 			$files = [$assoc_args['file']];
 		} else {
-			$files = ['develop.wp-cli.yml', 'production.wp-cli.yml', 'stagging.wp-cli.yml'];
+			$files = ['develop.wp-cli.yml', 'production.wp-cli.yml', 'staging.wp-cli.yml'];
 		}
 		
 		foreach($files as $file) {
-		
+
+			if (!file_exists($file))
+				WP_CLI::error('File is not exists: ' . $file);
+			
 			$data = file_get_contents($api);
 			$output = Yaml::parseFile($file);
-
+			
 			if (!is_writable($file))
 				WP_CLI::error('File is not writable or path is not correct: ' . $file);
 
